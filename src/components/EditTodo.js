@@ -1,15 +1,13 @@
 import {useState} from 'react';
 
-function CreateTodo(props) {
-  const {addItem} = props; 
-  const [content,setContent] = useState();
+function EditTodo(props) {
+  const {editValue,save,cancel} = props;
+  const [content,setContent] = useState(editValue.title);
   function handleChange(e){
     setContent(e.target.value);
   }
     function handleSubmit(e){
         e.preventDefault();
-        addItem(content);
-        setContent("");
       }
     return (
       <div className="create-post">
@@ -18,11 +16,12 @@ function CreateTodo(props) {
             <div className="form-field">
                 <input value={content} onChange={handleChange} />
             </div>
-            <button className="create-post-btn">Add ToDo</button>
+            <button onClick={()=>save(editValue.id,content)} className="create-post-btn">save</button>
+            <button onClick={()=>cancel()} className="create-post-btn">cancel</button>
         </form>
         
       </div>
     );
   }
   
-export default CreateTodo;
+export default EditTodo;

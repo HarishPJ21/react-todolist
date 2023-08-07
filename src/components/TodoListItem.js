@@ -7,8 +7,8 @@ function TodoListItem(props) {
   return (
     
     <div className="TodoListItems">
-      {todoItems.map((todoItem)=>(
-        <div className='todoItem' >
+      {todoItems.map((todoItem,index)=>(
+        <div key={index} className='todoItem' >
           <h3 className={todoItem.completed? "todo-text line-over":"todo-text"  }>{todoItem.title}</h3>
           {/* delete */}
           <img alt='delete' className='action-icon' src='https://cdn-icons-png.flaticon.com/512/5171/5171793.png' onClick={()=>deleteItem(todoItem.id)} />

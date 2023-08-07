@@ -1,14 +1,14 @@
-const { json } = require("stream/consumers");
+// const { json } = require("stream-consumers");
 
-url="https://jsonplaceholder.typicode.com/todos";
+const url="https://jsonplaceholder.typicode.com/todos";
 
-const fetch = async() =>{
+export const  fetchTodo = async() =>{
     const response = await fetch(url);
     const data = await response.json();
     return data;
 }
 
-const addTodo= async(todoItem)=>{
+export const addTodo= async(todoItem)=>{
     const response = await fetch(url,{
         method:'POST',
         body: JSON.stringify(todoItem),
@@ -18,13 +18,13 @@ const addTodo= async(todoItem)=>{
     });
 }
 
-const deleteTodo = async (todoID)=>{
+export const deleteTodo = async (todoID)=>{
     const response = await fetch(`${url+'/'+todoID}`,{
         method:'DELETE',
     });
 }
 
-const updateTodo = async (todoID)=>{
+export const updateTodo = async (todoID)=>{
     const response = await fetch(`${url+'/'+todoID}`,{
         method:'PUT',
     });
