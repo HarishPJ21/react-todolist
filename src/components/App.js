@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import {  EditTodo,TodoListItem,CreateTodo,PostDetail } from './'; 
-import { addTodo, deleteTodo, fetchTodo, updateTodo } from '../ApiCalls';
+import {  EditTodo,TodoListItem,CreateTodo } from './'; 
+import { addTodo, deleteTodo, updateTodo } from '../ApiCalls';
 
 
 function App() {
@@ -62,11 +62,9 @@ function App() {
   useEffect(() => {
     const url="https://jsonplaceholder.typicode.com/todos/?userId=1";
     fetch(url).then((Response)=>Response.json()).then((data)=>{
-      data;
       setTodoItems(data);
     })
-    // setTodoItems(fetchTodo())
-    console.log("useEffect:",todoItems);
+    // console.log("useEffect:",todoItems);
   }, []);
       // editTodoValue=todoItems.filter((todoItem)=>todoItem.id===todoID);
     // console.log("editTodoValue:");  
