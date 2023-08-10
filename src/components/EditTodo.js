@@ -16,8 +16,10 @@ function EditTodo(props) {
             <div className="form-field">
                 <input value={content} onChange={handleChange} />
             </div>
+            <div className='btn-div'>
             <button onClick={()=>save(editValue.id,content)} className="create-post-btn">save</button>
             <button onClick={()=>cancel()} className="create-post-btn">cancel</button>
+            </div>
         </form>
         
       </div>

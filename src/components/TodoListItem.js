@@ -6,11 +6,12 @@ function TodoListItem(props) {
 
   return (
     
-    <div className="TodoListItems">
+    <div className="todoListItems container">
       {todoItems.map((todoItem,index)=>(
         <div key={index} className='todoItem' >
           <h3 className={todoItem.completed? "todo-text line-over":"todo-text"  }>{todoItem.title}</h3>
           {/* delete */}
+          <div>
           <img alt='delete' className='action-icon' src='https://cdn-icons-png.flaticon.com/512/5171/5171793.png' onClick={()=>deleteItem(todoItem.id)} />
 
           {/* edit */}
@@ -18,7 +19,7 @@ function TodoListItem(props) {
           
           {/* complete */}
           <img alt='complete' className='action-icon' src='https://cdn-icons-png.flaticon.com/512/709/709510.png' onClick={()=>completeItem(todoItem.id)} />
-
+          </div>
         </div>
       ))}
       {/* {posts.map((post, index) => (

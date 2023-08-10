@@ -2,7 +2,7 @@ import {useState} from 'react';
 
 function CreateTodo(props) {
   const {addItem} = props; 
-  const [content,setContent] = useState();
+  const [content,setContent] = useState("");
   function handleChange(e){
     setContent(e.target.value);
   }
@@ -18,7 +18,9 @@ function CreateTodo(props) {
             <div className="form-field">
                 <input value={content} onChange={handleChange} />
             </div>
+            <div className='btn-div'>
             <button className="create-post-btn">Add ToDo</button>
+            </div>
         </form>
         
       </div>
