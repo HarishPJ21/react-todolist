@@ -19,6 +19,7 @@ function CreateTodo(props) {
                 <input value={content} onChange={handleChange} />
             </div>
             <div className='btn-div'>
+              {/* addTodo button */}
             <button className="create-post-btn">Add ToDo</button>
             </div>
         </form>
